@@ -21,7 +21,7 @@ contract NFT_PlasticNeutralCertification is ERC721 {
      */
 
     constructor() ERC721("PlasticNeutralCertificationNFT", "PC") {
-        _setBaseURI("ipfs://");
+
     }
 
     /**
@@ -55,6 +55,10 @@ contract NFT_PlasticNeutralCertification is ERC721 {
         _setTokenURI(id, metadataURI);
 
         return id;
+    }
+
+    function _baseURI() internal view override returns (string memory) {
+        return "ipfs://";
     }
 
 }
